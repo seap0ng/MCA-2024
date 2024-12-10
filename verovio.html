@@ -25,7 +25,12 @@
 <body>
     <div class="box">
     <div class="header"><h1>Week 3</h1>
-        <p>[Insert your response to task 2 here.]</p>
+        <p>A difference between how these file formats present data would be note duration, for example:</p><br>
+            
+        <p><b>MusicXML:</b> note duration is an element which displays the intended duration, e.g. <code>&lt;duration&gt;...&lt;/duration&gt;</code></p>
+        <p><b>MEI:</b> note duration is an attribute of an element, e.g. <code>&lt;note dur="..."/&gt;</code></p><br>
+        
+        <p>Some other differences between both filetypes would include elements such as <i>pitch</i>, <i>type</i>, <i>time signature</i>, etc.</p><br>
     </div>
     <div id="app">Verovio is loading...</div>
     <script type="module">
@@ -39,9 +44,9 @@
         }
         
         // A MusicXML file
-        var file = 'data/example.mei'; //Replace this with your own MEI file, but remember that JavaScript is case sensitive!
+        var file = 'data/xml-to-mei-file.mei'; //Replace this with your own MEI file, but remember that JavaScript is case sensitive!
         // A MEI file
-        //var file = 'https://www.verovio.org/editor/brahms.mei';
+        // var file = 'https://www.verovio.org/editor/brahms.mei';
         
         const app = new Verovio.App(document.getElementById("app"), options);
         fetch(file)

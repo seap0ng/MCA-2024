@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 10 Lab</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../default.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h3>MCA 2024 Portfolio</h3>
+            <sub>by Zak Lezaja</sub>
+            <ul>
+                <li><a href="../../index.html">MCA Lab 1</a></li>
+                <li><a href="/tasks/week-2-lab/week-2-lab.html">MCA Lab 2</a></li>
+                <li><a href="/tasks/week-3-lab/week-3-lab.html">MCA Lab 3</a></li>
+                <li><a href="/tasks/week-4-lab/week-4-lab.html">MCA Lab 4</a></li>
+                <li><a href="/tasks/week-5-lab/week-5-lab.html">MCA Lab 5</a></li>
+                <li><a href="/tasks/week-7-lab/week-7-lab.html">MCA Lab 6</a></li>
+                <li><a href="/tasks/week-8-lab/week-8-lab.html">MCA Lab 7</a></li>
+                <li><a href="/tasks/week-9-lab/week-9-lab.html">MCA Lab 8</a></li>
+                <li><a href="#Week10Lab" class="active-link"><b>MCA Lab 9</b></a></li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <h1><strong>Audio Similarity & Transcription</strong></h1>
+            <br>
+            <section id="Tasks">
+                <h2>Similarity Analysis</h2>
+                
+                <p>The python notebook used to perform the following analysis can be downloaded <a href="data/week10similarity_20191125a.ipynb" style="color: #d8544b;">here</a>.</p> <p>I used the same three tracks as last week's lab to compute these results.</p><br>
+                
+                <div class="three-image-grid">
+                    <img src="data/a-c-similarity.png">
+                    <img src="data/12-note-similarity.png">
+                    <img src="data/genre-analysis.png">
+                </div>
+                <br>
+                <br>
+                
+                <h2>Transcription Analysis</h2>
+                <p>It's safe to say most information was lost during this process, however interestingly there are still elements present that hint at the original piece. For example you can pick up on what chord/key the piece could be from the certain notes played at specific points, but overall I feel this is only obvious after listening to the original, had someone listened to this exported MIDI file first they'd probably not be able to take much away from it. In regards to the sheet music transcription, it's not gotten anything correct, and seems to think the piece is in 3/4. I wouldn't say this is a good place to start for someone needing help to transcribe a piece, starting from scratch would be more beneficial in my opinion.</p><br>
+                
+                <br>
+                
+                <p class="centred-text"><b>Original transcription from week 2</b></p><br>
+                <div class="slideshow-container">
+                  <div class="mySlides fade">
+                    <img src="data/pdf-p1.jpg">
+                  </div>
+                
+                  <div class="mySlides fade">
+                    <img src="data/pdf-p2.jpg">
+                  </div>
+                
+                  <div class="mySlides fade">
+                    <img src="data/pdf-p3.jpg">
+                  </div>
+                  
+                  <div class="mySlides fade">
+                    <img src="data/pdf-p4.jpg">
+                  </div>
+                  
+                  <div class="mySlides fade">
+                    <img src="data/pdf-p5.jpg">
+                  </div>
+                  
+                  <div class="mySlides fade">
+                    <img src="data/pdf-p6.jpg">
+                  </div>
+                  
+                  <div class="mySlides fade">
+                    <img src="data/pdf-p7.jpg">
+                  </div>
+                    
+                  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                  
+                  <div style="text-align:center">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                    <span class="dot" onclick="currentSlide(5)"></span>
+                    <span class="dot" onclick="currentSlide(6)"></span>
+                    <span class="dot" onclick="currentSlide(7)"></span>
+                  </div>
+                </div>
+                
+                <br>
+                <br>
+                
+                <p class="centred-text"><b>Sonic Visualiser Transcription</b></p>
+                <div class="hozirontal-image-container-grid">
+                    <img src="data/sonic-visualiser-midi-transcription-1.png" class="hozirontal-images">
+                    <img src="data/sonic-visualiser-midi-transcription-2.png" class="hozirontal-images">
+                </div>
+                
+                <script>
+                    let slideIndex = 1;
+                    showSlides(slideIndex);
+                    
+                    function plusSlides(n) {
+                      showSlides(slideIndex += n);
+                    }
+                    
+                    function currentSlide(n) {
+                      showSlides(slideIndex = n);
+                    }
+                    
+                    function showSlides(n) {
+                      let i;
+                      let slides = document.getElementsByClassName("mySlides");
+                      let dots = document.getElementsByClassName("dot");
+                      if (n > slides.length) {slideIndex = 1}
+                      if (n < 1) {slideIndex = slides.length}
+                      for (i = 0; i < slides.length; i++) {
+                        slides[i].style.display = "none";
+                      }
+                      for (i = 0; i < dots.length; i++) {
+                        dots[i].className = dots[i].className.replace(" active", "");
+                      }
+                      slides[slideIndex-1].style.display = "block";
+                      dots[slideIndex-1].className += " active";
+                    }
+                </script>
+            </section>
+        </div>
+    </div>
+</body>
+</html>

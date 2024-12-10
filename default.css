@@ -1,0 +1,475 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ##################################### */
+/* ############### Fonts ############### */
+/* ##################################### */
+.noto-serif-Header {
+  font-family: "Noto Serif", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+.ibm-plex-sans-thin {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.ibm-plex-sans-extralight {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.ibm-plex-sans-light {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.ibm-plex-sans-regular {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.ibm-plex-sans-medium {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.ibm-plex-sans-semibold {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.ibm-plex-sans-bold {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.ibm-plex-sans-thin-italic {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.ibm-plex-sans-extralight-italic {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.ibm-plex-sans-light-italic {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.ibm-plex-sans-regular-italic {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.ibm-plex-sans-medium-italic {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.ibm-plex-sans-semibold-italic {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.ibm-plex-sans-bold-italic {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+
+/* ########################################### */
+/* ############# Sidebar Styling ############# */
+/* ########################################### */
+.sidebar {
+    width: 250px;
+    background-color: #E6E3DE;
+    padding: 20px;
+    color: #575550;
+    border-right: 1px solid #CFCCC8;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+
+.sidebar h2 {
+    font-family: "Noto Serif", serif;
+    color: #575550;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.sidebar ul {
+    font-family: "Noto Serif", serif;
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin: 10px 0;
+}
+
+.sidebar ul li a {
+  color: #575550;
+  font-weight: normal;
+  font-size: 16px;
+  text-decoration: none;
+  display: inline-block;
+  transition: color 0.2s, transform 0.2s ease-in-out;
+}
+
+.sidebar ul li a:hover {
+  color: #d8544b;
+  transform: scale(1.1);
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #575550;
+  font-size: 18px;
+  display: block;
+  padding: 8px;
+  position: relative;
+  overflow: visible;
+  z-index: 1;
+}
+
+.sidebar a::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  background: linear-gradient(to right, #dddad5, transparent);
+  z-index: -1;
+  transition: width 0.2s ease-in-out;
+  border-radius: 3px;
+}
+
+.sidebar a:hover::before {
+  width: 100%;
+}
+
+.sidebar a.active-link {
+  position: relative;
+}
+
+.sidebar a.active-link::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to right, #dddad5, transparent);
+  z-index: -1;
+  border-radius: 3px;
+}
+
+.sidebar a:hover::before,
+.sidebar a.active-link::before {
+  width: 100%;
+  transition: width 0.2s ease-in-out;
+}
+
+
+/* #################################################### */
+/* ############# Body and Content Styling ############# */
+/* #################################################### */
+body {
+    font-family: "IBM Plex Sans", sans-serif;
+    background-color: #F3F1EB;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+    overflow: visible;
+}
+
+.content {
+    flex-grow: 1;
+    padding: 40px;
+    background-color: #F3F1EB;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.content section {
+    margin-bottom: 50px;
+}
+
+h1:after {
+  content:"";
+  display:block;
+  border:1px solid #CFCCC8;
+  border-radius:2px;
+}
+
+.content h1 {
+  font-family: "Noto Serif", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: #d8544b;
+}
+
+.content h2 {
+  font-family: "Noto Serif", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: #575550;
+  padding-bottom: 10px;
+}
+
+.content p {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    line-height: 1.6;
+    color: #65635E;
+    text-align: justify;
+}
+
+.content ul {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    line-height: 1.6;
+    color: #65635E;
+    padding-left: 40px; 
+}
+
+.content ul li {
+    font-weight: 300;
+}
+
+table {
+    border-collapse: collapse;
+    width: 50%;
+    margin: 0 auto;
+    border: 1px dotted #65635E;
+    color: #65635E;
+    font-weight: 300;
+}
+
+td, th {
+    border: 1px dotted #65635E;
+}
+
+tbody td:first-child {
+    background-color: #E6E3DE;
+    font-weight: 600;
+}
+
+.lab-7-table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0 auto;
+    border: 1px dotted #65635E;
+    color: #65635E;
+    font-weight: 300;
+}
+
+.lab-7-table thead {
+    background-color: #E6E3DE;
+    font-weight: 600;
+}
+
+.lab-7-table thead th {
+    text-align: left;
+    padding: 8px;
+    border: 1px dotted #65635E;
+}
+
+.lab-7-table tbody td {
+    padding: 8px;
+    border: 1px dotted #65635E;
+    text-align: left;
+}
+
+.lab-7-table tbody td:first-child {
+    background-color: #E6E3DE;
+    font-weight: 600;
+}
+
+
+.centred-text {
+  display: block;
+  width: 100%;
+  text-align: center !important;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #65635E;
+}
+
+
+.image-container-grid {
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    margin: 20px auto;
+}
+
+
+.top-image {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+}
+
+.bottom-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hozirontal-image-container-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    width: 100%;
+    height: auto;
+    margin: 20px auto;
+    justify-content: center;
+}
+
+.hozirontal-images {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.three-image-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    width: 100%;
+    margin: 20px auto;
+}
+
+.three-image-grid img {
+    width: 100%;
+    height: 30;
+    object-fit: cover;
+}
+
+* {box-sizing:border-box}
+
+.slideshow-container {
+  width: 50%;
+  position: relative;
+  margin: 0 auto;
+}
+
+.mySlides {
+  display: none;
+}
+
+.mySlides img {
+  width: 100%;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5vw;
+  padding: 0.2vw;
+  color: #F3F1EB;
+  background-color:rgba(87, 85, 80, 0.245);
+  font-weight: normal;
+  transition: 0.6s ease;
+  user-select: none;
+}
+
+.prev {
+  left: -5%;
+  border-radius: 3px 0 0 3px;
+}
+
+.next {
+  right: -5%;
+  border-radius: 0 3px 3px 0;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(87, 85, 80, 0.666);
+}
+
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+.dot {
+  cursor: pointer;
+  height: 7px;
+  width: 7px;
+  margin: 0 1px;
+  background-color:rgba(87, 85, 80, 0.245);
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: rgba(87, 85, 80, 0.666);
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}

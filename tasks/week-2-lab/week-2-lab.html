@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 2 Lab</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../default.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h3>MCA 2024 Portfolio</h3>
+            <sub>by Zak Lezaja</sub>
+            <ul>
+                <li><a href="../../index.html">MCA Lab 1</a></li>
+                <li><a href="#Week2Lab "class="active-link"><b>MCA Lab 2</b></a></li>
+                <li><a href="/tasks/week-3-lab/week-3-lab.html">MCA Lab 3</a></li>
+                <li><a href="/tasks/week-4-lab/week-4-lab.html">MCA Lab 4</a></li>
+                <li><a href="/tasks/week-5-lab/week-5-lab.html">MCA Lab 5</a></li>
+                <li><a href="/tasks/week-7-lab/week-7-lab.html">MCA Lab 6</a></li>
+                <li><a href="/tasks/week-8-lab/week-8-lab.html">MCA Lab 7</a></li>
+                <li><a href="/tasks/week-9-lab/week-9-lab.html">MCA Lab 8</a></li>
+                <li><a href="/tasks/week-10-lab/week-10-lab.html">MCA Lab 9</a></li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <h1><strong>Music as Notation</strong></h1>
+            <br>
+            <section id="Tasks">
+                <h2>Identifying a Piece of Music</h2>
+                <p>I decided to transcribe the intro of a piece of music for this week's lab as I couldn't find it on MuseScore. I transcribed all the elements of the band to familiarise myself with the MuseScore software. I then uploaded the file to my own MuseScore profile, which can be viewed and downloaded <a href="https://musescore.com/user/88469218/scores/21258049" style="color: #d8544b;">here</a>.</p><br>
+                
+                <p>Alternatively, <a href="data/downloaded-musescore-pdf-file.pdf" style="color: #d8544b;">click here</a> to download the PDF straight from this repo.</p><br>
+                
+                <div class="slideshow-container">                  
+                  <div class="mySlides fade">
+                    <img src="data/pdf-p1.jpg">
+                  </div>
+                
+                  <div class="mySlides fade">
+                    <img src="data/pdf-p2.jpg">
+                  </div>
+                
+                  <div class="mySlides fade">
+                    <img src="data/pdf-p3.jpg">
+                  </div>
+                  
+                  <div class="mySlides fade">
+                    <img src="data/pdf-p4.jpg">
+                  </div>
+                  
+                  <div class="mySlides fade">
+                    <img src="data/pdf-p5.jpg">
+                  </div>
+                  
+                  <div class="mySlides fade">
+                    <img src="data/pdf-p6.jpg">
+                  </div>
+                  
+                  <div class="mySlides fade">
+                    <img src="data/pdf-p7.jpg">
+                  </div>
+
+                  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                  
+                  <div style="text-align:center">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                    <span class="dot" onclick="currentSlide(5)"></span>
+                    <span class="dot" onclick="currentSlide(6)"></span>
+                    <span class="dot" onclick="currentSlide(7)"></span>
+                  </div>
+                </div>
+                
+                <br>
+                <br>
+                
+                <h2>MuseScore OMR Engine Transcription</h2>
+                <p>You can download the corrected MuseScore file <a href="data/corrected-musescore-file.mscz" style="color: #d8544b;">here</a>.</p><br>
+                
+                <p>The first thing I noticed was it couldn't transcribe the drum notation. Drums - specifically kicks and snares - are of course "tuned" instruments, however I'm assuming the algorithms that the OMR engine uses to transcribe are perhaps geared towards melodic instruments. If that's the case then I can understand why this didn't transcribe well.</p><br>
+                
+                <p>Some other changes and issues encountered were:</p><br>
+                <ul>
+                    <li>Incorrect time signatures, none of the 7/4 bars were present and everything was presented as 4/4</li>
+                    <li>Some bars were just completely empty, filled with only a rest</li>
+                    <li>Incorrect instrumentation, all instruments were replaced with a default "voice" part</li>
+                    <li>No articulations were recognised, such as trills and vibrato</li>
+                    <li>No title/artist information recognised by the OMR engine</li>
+                </ul>
+
+                <script>
+                    let slideIndex = 1;
+                    showSlides(slideIndex);
+                    
+                    function plusSlides(n) {
+                      showSlides(slideIndex += n);
+                    }
+                    
+                    function currentSlide(n) {
+                      showSlides(slideIndex = n);
+                    }
+                    
+                    function showSlides(n) {
+                      let i;
+                      let slides = document.getElementsByClassName("mySlides");
+                      let dots = document.getElementsByClassName("dot");
+                      if (n > slides.length) {slideIndex = 1}
+                      if (n < 1) {slideIndex = slides.length}
+                      for (i = 0; i < slides.length; i++) {
+                        slides[i].style.display = "none";
+                      }
+                      for (i = 0; i < dots.length; i++) {
+                        dots[i].className = dots[i].className.replace(" active", "");
+                      }
+                      slides[slideIndex-1].style.display = "block";
+                      dots[slideIndex-1].className += " active";
+                    }
+                </script>
+            </section>
+        </div>
+    </div>
+</body>
+</html>
